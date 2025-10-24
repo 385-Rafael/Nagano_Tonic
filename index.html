@@ -1,158 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tonic Japonese</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagano Tonic - Discover the Ancient Secret</title>
   <style>
-    body {
+    /* RESET */
+    body, html {
       margin: 0;
-      font-family: "Arial", sans-serif;
-      color: white;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #000 url('https://github.com/385-Rafael/Nagano_Tonic/blob/main/cherry-blossoms-castle-himeji-japan.jpg?raw=true') center/cover no-repeat;
-      position: relative;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      height: 100%;
+      background: #000;
+      color: #fff;
       overflow: hidden;
     }
 
-    /* Overlay escuro */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.65);
-      z-index: 0;
-    }
-
+    /* HERO SECTION */
     .hero {
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://github.com/385-Rafael/Nagano_Tonic/blob/main/cherry-blossoms-castle-himeji-japan.jpg?raw=true')
+        center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      max-width: 800px;
       padding: 0 20px;
-      position: relative;
-      z-index: 1;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.8rem;
+      max-width: 800px;
       line-height: 1.3;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      color: #f1f1f1;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
 
-    .cta-btn {
-      background: #ff4d6d;
-      color: white;
-      padding: 15px 35px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      display: inline-block;
-    }
-
-    .cta-btn:hover {
-      background: #e03e5d;
-    }
-
-    /* Modal de cookies */
-    .cookie-modal {
+    /* COOKIE BANNER */
+    .cookie-banner {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.9);
-      color: white;
-      padding: 20px;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.85);
+      border-radius: 15px;
+      padding: 20px 30px;
       text-align: center;
-      z-index: 10;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
-      display: none;
-      animation: slideUp 0.5s ease;
+      max-width: 400px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      z-index: 9999;
+      animation: fadeIn 0.8s ease;
     }
 
-    @keyframes slideUp {
-      from { transform: translateY(100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .cookie-banner p {
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      color: #f2f2f2;
     }
 
-    .cookie-buttons {
-      margin-top: 15px;
-    }
-
-    .cookie-btn {
+    .cookie-banner button {
       background: #ff4d6d;
       border: none;
       color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      margin: 0 10px;
-      cursor: pointer;
       font-weight: bold;
+      border-radius: 30px;
+      padding: 12px 28px;
+      cursor: pointer;
       transition: background 0.3s;
     }
 
-    .cookie-btn:hover {
-      background: #e03e5d;
+    .cookie-banner button:hover {
+      background: #e63b5c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, 20px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-      .hero p {
-        font-size: 1.1rem;
-      }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .cookie-banner { width: 90%; padding: 15px 20px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Discover What’s Really Draining Your Energy</h1>
-    <p>Harvard scientists reveal the surprising truth behind men’s vitality after 50.</p>
-    <a class="cta-btn" href="#" id="openCookies">Watch The Free Presentation</a>
+    <h1>Unlock the Ancient Japanese Secret for Energy and Vitality</h1>
+    <p>Discover why thousands are calling this the “Nagano Tonic” — a centuries-old ritual now transforming modern health.</p>
   </section>
 
-  <!-- Modal de cookies -->
-  <div class="cookie-modal" id="cookieModal">
-    <p>We use cookies to improve your experience. Do you accept?</p>
-    <div class="cookie-buttons">
-      <button class="cookie-btn" id="acceptCookies">Accept</button>
-      <button class="cookie-btn" id="rejectCookies">Decline</button>
-    </div>
+  <!-- COOKIE CONSENT -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>We use cookies to personalize content and improve your experience. Continue to discover the ancient formula?</p>
+    <button id="acceptCookies">Continue</button>
   </div>
 
+  <!-- SCRIPT -->
   <script>
-    const cookieModal = document.getElementById('cookieModal');
-    const openCookies = document.getElementById('openCookies');
-    const acceptBtn = document.getElementById('acceptCookies');
-    const rejectBtn = document.getElementById('rejectCookies');
-
-    const redirectLink = "https://f2319qrhvr9t4s9aenw9p71x6p.hop.clickbank.net"; // link do produto
-
-    openCookies.addEventListener('click', () => {
-      cookieModal.style.display = 'block';
-    });
-
-    acceptBtn.addEventListener('click', () => {
-      window.location.href = redirectLink;
-    });
-
-    rejectBtn.addEventListener('click', () => {
-      window.location.href = redirectLink;
+    document.getElementById('acceptCookies').addEventListener('click', function() {
+      // Redireciona para o link do produto afiliado
+      window.location.href = "https://f2319qrhvr9t4s9aenw9p71x6p.hop.clickbank.net";
     });
   </script>
 
 </body>
 </html>
-
-
