@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vital Men's Health - Official Video</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000 url('COLOQUE_AQUI_O_LINK_DA_IMAGEM') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Overlay escuro */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #f1f1f1;
+    }
+
+    .cta-btn {
+      background: #ff4d6d;
+      color: white;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      background: #e03e5d;
+    }
+
+    /* Modal de cookies */
+    .cookie-modal {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+      display: none;
+      animation: slideUp 0.5s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .cookie-buttons {
+      margin-top: 15px;
+    }
+
+    .cookie-btn {
+      background: #ff4d6d;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .cookie-btn:hover {
+      background: #e03e5d;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>Discover What’s Really Draining Your Energy</h1>
+    <p>Harvard scientists reveal the surprising truth behind men’s vitality after 50.</p>
+    <a class="cta-btn" href="#" id="openCookies">Watch The Free Presentation</a>
+  </section>
+
+  <!-- Modal de cookies -->
+  <div class="cookie-modal" id="cookieModal">
+    <p>We use cookies to improve your experience. Do you accept?</p>
+    <div class="cookie-buttons">
+      <button class="cookie-btn" id="acceptCookies">Accept</button>
+      <button class="cookie-btn" id="rejectCookies">Decline</button>
+    </div>
+  </div>
+
+  <script>
+    const cookieModal = document.getElementById('cookieModal');
+    const openCookies = document.getElementById('openCookies');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const rejectBtn = document.getElementById('rejectCookies');
+
+    const redirectLink = "https://f2319qrhvr9t4s9aenw9p71x6p.hop.clickbank.net"; // link do produto
+
+    openCookies.addEventListener('click', () => {
+      cookieModal.style.display = 'block';
+    });
+
+    acceptBtn.addEventListener('click', () => {
+      window.location.href = redirectLink;
+    });
+
+    rejectBtn.addEventListener('click', () => {
+      window.location.href = redirectLink;
+    });
+  </script>
+
+</body>
+</html>
